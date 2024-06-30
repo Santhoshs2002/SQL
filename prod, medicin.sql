@@ -1,0 +1,16 @@
+CREATE DATABASE product;
+USE product;
+CREATE TABLE  product(id int,product_name varchar(13),product_prize int,product_expire_date int);
+CREATE DATABASE medicine_list;
+USE medicine_list;
+CREATE TABLE medicine_list(id int, medicine_name varchar(30), medicine_prize bigint, medicine_expires_on varchar(8));
+USE product;
+DESC product;
+INSERT INTO product (id,product_name,product_prize,product_expire_date,type_) values (1,"zara",200,2024,veg);
+set sql_safe_updates=0;
+INSERT INTO product (id,product_name,product_prize,product_expire_date,type_) VALUE (1,"MAGGIE",75,2025,"veg");
+ALTER TABLE product ADD COLUMN type_ varchar(10);
+ALTER TABLE product DROP COLUMN type_;
+DELETE FROM product WHERE ID=1 ;
+ALTER TABLE product RENAME COLUMN type_ to _type;
+ALTER TABLE product MODIFY COLUMN product_expire_date bigint;
